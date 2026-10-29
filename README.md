@@ -2,8 +2,13 @@
 
 Occult Box is a ReShade FX collection for image correction, stylized lighting,
 depth diagnostics, screen-space shading, sampling experiments, and artistic
-post-processing. This release contains **35 effects** organized into five
+post-processing. The current tree contains **35 effects** organized into five
 self-contained families.
+
+Choose a family by the kind of image work you want to inspect, keep its effects
+and headers together, and begin with a single technique. The catalog below
+describes the supplied shader source; each effect still needs compile and
+visual checks in the ReShade environment where it will be used.
 
 <p align="center">
   <img src="docs/images/occult-box-hero-split-comparison.png" alt="Split-screen Occult Box comparison with no effects on the left and effects enabled on the right" width="100%">
@@ -21,6 +26,8 @@ self-contained families.
 - [Requirements and installation](#requirements)
 - [Recommended first run](#recommended-first-run)
 - [Repository layout](#repository-layout)
+- [Validation and contribution](#validation-and-contribution)
+- [License material](#license-material)
 
 ## Visual comparison
 
@@ -305,3 +312,29 @@ Occult Box/
   docs/images/      README comparison captures
 ```
 
+## Validation and contribution
+
+The repository contains 35 effect files and 126 headers. Those counts describe
+the source tree, not a claim that every technique has passed a live runtime
+test. The supplied captures illustrate particular comparisons; their exact
+presets, effect order, and parameter settings are not reconstructed here.
+
+For a change, start in the relevant family's `effects/` directory and follow
+its includes into that family's `header/` directory. Keep source dependencies
+and diagnostic views visible in review. A useful report identifies the effect,
+the rendering API and ReShade version, the first compile error or warning, and
+the observed result at a stated setting.
+
+For visual changes, compare the input, diagnostic view, and final composite
+before combining several treatments. Distinguish a depth reference from a
+surrogate or diagnostic approximation, especially when working on Depth
+Oracle. The family guide and catalog provide the starting points; the source
+remains the place to inspect the actual processing path.
+
+## License material
+
+Existing copyright headers and upstream credits are preserved. Some effect
+headers refer to `LICENSE-SOURCE-AVAILABLE-RESHADE-ONLY.txt`; that filename is
+not bundled in this tree, and there is no standalone project-wide license file
+here. This README records the supplied state without inventing replacement
+terms or a new rights holder.
