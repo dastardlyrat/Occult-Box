@@ -2,7 +2,7 @@
 
 Occult Box is a ReShade FX collection for image correction, stylized lighting,
 depth diagnostics, screen-space shading, sampling experiments, and artistic
-post-processing. The current tree contains **35 effects** organized into five
+post-processing. The current tree contains **36 effects** organized into five
 self-contained families.
 
 Choose a family by the kind of image work you want to inspect, keep its effects
@@ -68,7 +68,7 @@ an exact preset, effect order, or parameter configuration.
 
 | Family | Effects | Headers | Focus |
 |---|---:|---:|---|
-| [`black_wand`](black_wand) | 20 | 80 | AA, AO, bloom, color, detail, denoising, hatch, lighting, and reflection-style treatments |
+| [`black_wand`](black_wand) | 21 | 80 | AA, AO, bloom, color, defringing, detail, denoising, hatch, lighting, and reflection-style treatments |
 | [`book_of_death`](book_of_death) | 9 | 14 | Named multi-pass effects and reusable image-analysis servers |
 | [`depth_oracle`](depth_oracle) | 1 | 22 | Depth, normal, confidence, fallback, and continuity diagnostics |
 | [`golden_weave`](golden_weave) | 2 | 1 | Screen-space ray-marched indirect-light experiments |
@@ -86,6 +86,7 @@ smallest effect that addresses the problem you can actually observe.
 |---|---|---|
 | Verify depth and normals | `black_wand_DepthOracle` | `BlackWand_MaskDepth_DebugRouter` for application masks and guard routing |
 | Reduce edge crawl or shimmer | `BlackWand_SmartAA_EdgeClean` | `PottingClay` for a broader three-stage AA treatment; `BlackWand_SurfaceContinuity` for same-surface noise |
+| Remove thin colored edge fringes | `BlackWand_EdgeChromaWard` | Inspect its color-family and correction-mask views, then tune only the affected hue bands |
 | Add contact grounding | `BlackWand_DepthAO_ContactShade` | `DeathGaze` for contact, broad-form, and superfine AO layers |
 | Add bloom | `BlackWand_ThreeBandBloom` | `BlackWand_BloomBurst_Corona` for a tighter core and broader corona treatment |
 | Add indirect color or warm bounce | `BlackWand_GI_ColorBleed` or `BlackWand_MorningLight_GI` | `GoldenHour` or a `GoldenWeave` build for more involved screen-space gathering |
@@ -103,10 +104,11 @@ terms such as “three-stage” or “three-layer.”
 
 ### Black Wand
 
-Black Wand is the compact, task-oriented family. Its 20 effects each declare a
-single ReShade pass and expose focused controls and debug views. It covers the
-short path from cleanup and input diagnosis through shading, stylization, and
-final color work.
+Black Wand is the compact, task-oriented family. It contains 21 effects with
+focused controls and debug views. Twenty effects declare a single ReShade pass;
+Edge Chroma Ward declares three passes so it can correct, update its optional
+history mask, and present the result. The family covers the short path from
+cleanup and input diagnosis through shading, stylization, and final color work.
 
 | Effect source | ReShade technique | What it does | Best fit |
 |---|---|---|---|
@@ -130,6 +132,36 @@ final color work.
 | [18 — Morning Light GI](black_wand/effects/BlackWand_18_MorningLight_GI.fx) | `BlackWand_MorningLight_GI` | Adds warm indirect light, shadow lift, and gentle color bleed through the primitive sampling lens. | A softer warm-bounce treatment. |
 | [19 — Deep Color Grade](black_wand/effects/BlackWand_19_DeepColor_Grade.fx) | `BlackWand_DeepColor_Grade` | Combines shadow deepening, highlight protection, saturation, and warm/cool balance. | Final palette and tonal-weight adjustment. |
 | [20 — Spiral Denoiser](black_wand/effects/BlackWand_20_SpiralDenoiser.fx) | `BlackWand_SpiralDenoiser` | Uses fixed spiral taps with edge protection and detail return; it does not rely on dynamic sample loops. | Bounded denoising where edges and small detail must survive. |
+| [21 — Edge Chroma Ward](black_wand/effects/BlackWand_21_EdgeChromaWard.fx) | `BlackWand_EdgeChromaWard` | Detects narrow color outliers at luminance edges and corrects magenta, cyan, green, red, blue, and yellow fringes while preserving center-pixel luminance. | Image-driven cleanup with an optional, minute previous-mask guard for removal that is briefly occluded by slight motion. |
+
+#### Edge Chroma Ward: image-driven use
+
+`BlackWand_EdgeChromaWard` remains spatial by default. It does not require
+depth or game motion vectors. Its optional **Minute Temporal Guard** stores the
+previous source color and removal mask, then carries forward only a small,
+rapidly decaying part of that mask when slight frame change occludes current
+spatial detection. A small cross-shaped history search lets the mask follow a
+minute pixel shift, while color matching rejects unrelated history. It does not
+blend current and previous image color. Large frame changes reject the held
+mask to limit trails and scene-change carryover.
+
+The detector requires both a luminance edge and a narrow, locally exceptional
+color band. Six controls cover the three opponent families visible in common
+chromatic fringes: magenta/green, cyan/red, and blue/yellow. **Protect
+Persistent Color** rejects broad color that continues into neighboring pixels,
+reducing the chance that a real purple flower, green surface, or colored light
+is mistaken for a one-pixel fringe.
+
+Use **Detected Color Family** to identify the rim, **Thin Fringe Mask** to check
+that the selected color is spatially narrow, and **Correction Amount** to see
+the final gated application. When the optional guard is enabled, **Frame
+Change** shows the current/previous difference and **Temporal Hold** shows only
+the small amount of prior removal being retained. The split debug view places
+the untouched source on the left and the corrected image on the right. A
+practical starting order is to place the ward before strong clarity,
+sharpening, saturation, or bloom passes that might enlarge an existing
+game-rendered fringe. If one specific later effect creates a new rim, move the
+ward immediately after that effect and retest the masks.
 
 ### Book of Death
 
@@ -286,6 +318,7 @@ directory.
    before stacking it with other techniques.
 
 For a lighter starting point, try `BlackWand_SmartAA_EdgeClean`,
+`BlackWand_EdgeChromaWard`,
 `BlackWand_ToneDetail_Richness`, or `BlackWand_DeepColor_Grade`. For experimental
 indirect light, begin with `GoldenWeave_RMGI_Primitive` and increase its ray and
 step budgets gradually.
@@ -314,7 +347,7 @@ Occult Box/
 
 ## Validation and contribution
 
-The repository contains 35 effect files and 126 headers. Those counts describe
+The repository contains 36 effect files and 126 headers. Those counts describe
 the source tree, not a claim that every technique has passed a live runtime
 test. The supplied captures illustrate particular comparisons; their exact
 presets, effect order, and parameter settings are not reconstructed here.
