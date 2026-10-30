@@ -145,6 +145,19 @@ minute pixel shift, while color matching rejects unrelated history. It does not
 blend current and previous image color. Large frame changes reject the held
 mask to limit trails and scene-change carryover.
 
+<p align="center">
+  <img src="docs/images/edge-chroma-ward-three-way-magenta-aid.png" alt="Three-way Edge Chroma Ward comparison: effects off, effects on without defringing, and effects on with Edge Chroma Ward" width="100%">
+</p>
+
+> **Comparison note:** the center panel modestly amplifies only the
+> already-present magenta-dominant edge pixels so the screenshot communicates
+> the fringe visible on the display. The left and right panels are not color
+> altered. Open the [fully source-faithful three-way
+> comparison](docs/images/edge-chroma-ward-three-way-faithful.png) when judging
+> the captures without that visibility aid. A [copy-ready ReShade Presentation
+> post](docs/forum/edge-chroma-ward-presentation.txt) is included with the
+> effect documentation.
+
 The detector requires both a luminance edge and a narrow, locally exceptional
 color band. Six controls cover the three opponent families visible in common
 chromatic fringes: magenta/green, cyan/red, and blue/yellow. **Protect

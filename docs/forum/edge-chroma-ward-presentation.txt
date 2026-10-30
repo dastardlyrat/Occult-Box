@@ -1,0 +1,57 @@
+TITLE:
+[Shader] Edge Chroma Ward — image-driven colored-fringe cleanup
+
+POST:
+[b]Edge Chroma Ward[/b]
+[i]by prutrescor[/i]
+
+Edge Chroma Ward is a color-only ReShade effect for removing thin colored rims from high-contrast edges. I built it after observing narrow magenta edge contamination in stationary captures that could become more visible after a larger effect stack. The same detector can be tuned for cyan, green, red, blue, and yellow fringes.
+
+This is not a global desaturation pass and it does not require depth or game motion vectors. Correction is allowed only where the image provides three pieces of spatial evidence:
+
+[list]
+[*]a local luminance edge;
+[*]a color excess in one of six opponent color families; and
+[*]a narrow-band response that does not persist into the wider neighborhood.
+[/list]
+
+The last test is the important restraint. [b]Protect Persistent Color[/b] reduces correction when a color continues across nearby pixels, which helps distinguish a one-pixel fringe from an actual purple flower, colored surface, or light. The replacement candidate comes from the local neighborhood, then the center pixel's luminance is reapplied so the ward does not simply blur away the edge's brightness structure.
+
+[img]https://raw.githubusercontent.com/dastardlyrat/Occult-Box/main/docs/images/edge-chroma-ward-three-way-magenta-aid.png[/img]
+
+[b]Screenshot disclosure:[/b] the center panel modestly amplifies only already-present magenta-dominant edge pixels so the screenshot communicates the fringe visible on the display. The left and right panels are not color altered. The fully source-faithful three-way comparison is here:
+[url=https://raw.githubusercontent.com/dastardlyrat/Occult-Box/main/docs/images/edge-chroma-ward-three-way-faithful.png]Open the unenhanced comparison[/url]
+
+[b]Optional minute temporal guard[/b]
+
+The effect remains spatial by default. The optional guard does not blend previous-frame image color. It briefly carries a small, rapidly decaying part of the previous [i]removal mask[/i] when slight image movement temporarily occludes the current spatial detection. A small cross-shaped history search can follow a minute pixel shift, while source-color comparison rejects unrelated history and larger frame changes. It is intended as a conservative continuity aid, not a general temporal filter.
+
+[b]Debug views[/b]
+
+[list]
+[*]Luma Edge Mask
+[*]Thin Fringe Mask
+[*]Detected Color Family
+[*]Correction Candidate
+[*]Correction Amount
+[*]Split: Source | Corrected
+[*]Frame Change
+[*]Temporal Hold
+[/list]
+
+[b]Suggested setup order[/b]
+
+Start around a one-pixel radius and inspect the masks before increasing strength. Tune only the color families you can actually see. Raise [b]Protect Persistent Color[/b] before reducing the detector thresholds.
+
+Place Edge Chroma Ward before strong sharpening, clarity, saturation, or bloom passes that may enlarge an existing game-rendered fringe. If one later shader creates a new rim, move the ward immediately after that shader and inspect the masks again.
+
+[b]Download and source[/b]
+
+[url=https://github.com/dastardlyrat/Occult-Box]Occult Box repository[/url]
+[url=https://github.com/dastardlyrat/Occult-Box/blob/main/black_wand/effects/BlackWand_21_EdgeChromaWard.fx]Edge Chroma Ward source[/url]
+
+The effect is included in the Black Wand family as [code]BlackWand_EdgeChromaWard[/code]. Feedback is especially useful on false positives involving real colored materials, different fringe color combinations, and motion cases where the optional guard should reject history sooner.
+
+[b]Development note:[/b] the implementation and documentation were produced through a human-directed, AI-assisted workflow. The shader's runtime captures and visual tuning observations come from testing in ReShade; the repository keeps the source, controls, debug views, and comparison disclosure inspectable.
+
+— prutrescor
