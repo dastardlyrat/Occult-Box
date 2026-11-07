@@ -1,0 +1,1045 @@
+{
+  "schema": "occult-box-api-documentation-manifest-v1",
+  "api_version": "0.1.0",
+  "status": "draft documentation baseline",
+  "source_commit": "4c72e8b42f50e3b830333c547f180e66c3b7cd6d",
+  "source_scope": [
+    "black_wand",
+    "book_of_death",
+    "depth_oracle",
+    "golden_weave",
+    "legacy_lenses"
+  ],
+  "summary": {
+    "source_files": 162,
+    "effects": 36,
+    "headers": 126,
+    "techniques": 36,
+    "uniforms": 932,
+    "macros": 816,
+    "structs": 9,
+    "struct_fields": 58,
+    "functions": 1556,
+    "resources": 24,
+    "local_include_edges": 250,
+    "external_include_edges": 16
+  },
+  "families": [
+    {
+      "family": "black_wand",
+      "effects": 21,
+      "headers": 80,
+      "techniques": 21,
+      "uniforms": 211
+    },
+    {
+      "family": "book_of_death",
+      "effects": 9,
+      "headers": 14,
+      "techniques": 9,
+      "uniforms": 453
+    },
+    {
+      "family": "depth_oracle",
+      "effects": 1,
+      "headers": 22,
+      "techniques": 1,
+      "uniforms": 56
+    },
+    {
+      "family": "golden_weave",
+      "effects": 2,
+      "headers": 1,
+      "techniques": 2,
+      "uniforms": 78
+    },
+    {
+      "family": "legacy_lenses",
+      "effects": 3,
+      "headers": 9,
+      "techniques": 3,
+      "uniforms": 134
+    }
+  ],
+  "documents": {
+    "architecture_and_policy": "README.md",
+    "effect_interfaces": "EFFECTS.md",
+    "include_surface": "INCLUDES.md",
+    "machine_index": "SYMBOLS.json"
+  },
+  "source_files": [
+    {
+      "path": "black_wand/effects/BlackWand_01_SmartAA_EdgeClean.fx",
+      "kind": "effect",
+      "bytes": 7509,
+      "sha256": "7A40EC5771B58D576D489A97D39B0F73CFD77D74578997FFD3D82DA09F307BAB"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_02_DepthAO_ContactShade.fx",
+      "kind": "effect",
+      "bytes": 7369,
+      "sha256": "41A207AA888B237497FFE0C30783EA1F0E43CE55A2A1CAE3FA0656A7F88607A2"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_03_ThreeBandBloom.fx",
+      "kind": "effect",
+      "bytes": 7653,
+      "sha256": "7552836C2611437EF8CA133E090A156244CC3265D84187760399947D23354BA2"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_04_HatchInkCel.fx",
+      "kind": "effect",
+      "bytes": 7091,
+      "sha256": "8F1A769A0475B2E64804DBEDB0108F2CE6C19E0BC06E3AF683B4EFAC74A6B732"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_05_GI_ColorBleed.fx",
+      "kind": "effect",
+      "bytes": 6803,
+      "sha256": "898D08135C5864F1DCEE1D3431A782E2417277CD89626AD6392F5DDD9D9DDDAC"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_06_GlossSSR_MaterialSheen.fx",
+      "kind": "effect",
+      "bytes": 7882,
+      "sha256": "6FF1F5EC2AAE4CB84B141C647E34DC2D8DF786E457D76A2226FCF0CA18E94767"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_07_ToneDetail_Richness.fx",
+      "kind": "effect",
+      "bytes": 7257,
+      "sha256": "2E3DF12EC661AFE4C13EDF6CBFDC91DAD455BF47FCE038E551C034A5E32524B0"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_08_RayMarch_PrimitiveLight.fx",
+      "kind": "effect",
+      "bytes": 11947,
+      "sha256": "0445EFDAB885F92AF565A1D3F2688AAFFF3BA8DE032C160D5983868880A3AF8A"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_09_MaskDepth_DebugRouter.fx",
+      "kind": "effect",
+      "bytes": 6533,
+      "sha256": "569C4604C8E5747F618EF49202731D7C56C6487E1F39BEA6EC7F4BE961E46498"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_10_FogLight_Guard.fx",
+      "kind": "effect",
+      "bytes": 6997,
+      "sha256": "9881BD49C5D758391423261DEA4DDFA4CB979AC725A048AE5FABD32676986D95"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_11_FarZ_Detail.fx",
+      "kind": "effect",
+      "bytes": 5833,
+      "sha256": "19278966EBBEC2E26F1526473A2BE1EEE18A6A004926E72D8CDBF5F8D7804F3C"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_12_MicroDetail_Clarity.fx",
+      "kind": "effect",
+      "bytes": 5390,
+      "sha256": "631DD579DAA38AF432E53B90AFE3DCDC759F73E74AF94A6D0F9F28AC1D1CA74A"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_13_SurfaceContinuity.fx",
+      "kind": "effect",
+      "bytes": 5283,
+      "sha256": "5C03D311F03852B471E6BB415683B07F591E8D5651F6CDB9EEC23E30A9C33664"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_14_BloomBurst_Corona.fx",
+      "kind": "effect",
+      "bytes": 6140,
+      "sha256": "D6E5384B35C12609E715962AE10023A58B26E06972303F1586DDF39F297592B1"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_15_ObsidianGlass_SSR.fx",
+      "kind": "effect",
+      "bytes": 7286,
+      "sha256": "1E62C43D37BB7C070D523CAF94FC66B5658D9806C0E7B0CC76983FAA6A9BBF04"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_16_LogSpiral_HatchClarity.fx",
+      "kind": "effect",
+      "bytes": 6075,
+      "sha256": "CBCB6BDE29397837846F8FF91FC771C056241CCFF6C31938FED09EE2F3EC1652"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_17_GuidedDirectional_TonalShade.fx",
+      "kind": "effect",
+      "bytes": 6435,
+      "sha256": "DCB2CD9CADEEE3689E055F9F9EB6DAA09DDF8BDDD499E5BD78946F718495F2E6"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_18_MorningLight_GI.fx",
+      "kind": "effect",
+      "bytes": 5937,
+      "sha256": "7069918BBB90F4E8CF3105342DE44E32BD19DF5E1B662DA513F57F0A9960E2EB"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_19_DeepColor_Grade.fx",
+      "kind": "effect",
+      "bytes": 6281,
+      "sha256": "6A9884C0E74616384FE08D4412CC5494EE4178E9701405268249E6C0BE5CB00E"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_20_SpiralDenoiser.fx",
+      "kind": "effect",
+      "bytes": 6632,
+      "sha256": "986DCC1390E8C4B550033F8863BF5C21D8318CEB4D7E41D8F45B588A2A70DB1E"
+    },
+    {
+      "path": "black_wand/effects/BlackWand_21_EdgeChromaWard.fx",
+      "kind": "effect",
+      "bytes": 17557,
+      "sha256": "A1CF427372FDBA39E9729680820B141C0779F09857D3237109093E25AD6B59AD"
+    },
+    {
+      "path": "black_wand/header/black_wand_Complex_Helper_AA.fxh",
+      "kind": "header",
+      "bytes": 1786,
+      "sha256": "3ED7D66211D3889809E878A6BF676EC1BA9C4BCB96DF186D7254BC6A7A7627FE"
+    },
+    {
+      "path": "black_wand/header/black_wand_Complex_Helper_All.fxh",
+      "kind": "header",
+      "bytes": 330,
+      "sha256": "F4D28A5C56B0F1B30046FAA970AA6397EBF35A327146945CB1A95FA9DF79177B"
+    },
+    {
+      "path": "black_wand/header/black_wand_Complex_Helper_AO.fxh",
+      "kind": "header",
+      "bytes": 1659,
+      "sha256": "2A2FBB26C3A6DE2F452B67535AC9BCE8C7294DFBF14A94270EA1C01B3821C9CA"
+    },
+    {
+      "path": "black_wand/header/black_wand_Complex_Helper_Detail.fxh",
+      "kind": "header",
+      "bytes": 1188,
+      "sha256": "FFF489B6273FCBF14059EC8AA493577F55C97427B544150A6F7FF064E40E09E4"
+    },
+    {
+      "path": "black_wand/header/black_wand_Complex_Helper_SSR.fxh",
+      "kind": "header",
+      "bytes": 2348,
+      "sha256": "DAB924D695EE6C1F7D0AEEE3610E5798DD15DA4F913AB2FF252F469BB7F0587F"
+    },
+    {
+      "path": "black_wand/header/black_wand_Complex_Helper_Tone.fxh",
+      "kind": "header",
+      "bytes": 925,
+      "sha256": "51464F525CA64FEC36880AAAC3154F01981863CEDD7165E3008E7042FE0D8036"
+    },
+    {
+      "path": "black_wand/header/black_wand_Debug_Colorize_Server.fxh",
+      "kind": "header",
+      "bytes": 881,
+      "sha256": "90ED0078449B023D6E2EAA8877FD1FBBC6A65C37945B014F1318D0C60D4A353D"
+    },
+    {
+      "path": "black_wand/header/black_wand_Depth_Adapter.fxh",
+      "kind": "header",
+      "bytes": 5502,
+      "sha256": "824525F24170547E562AA47B857C6B8A762F345BA645F28B956D61F0C471E3C0"
+    },
+    {
+      "path": "black_wand/header/black_wand_DO_All.fxh",
+      "kind": "header",
+      "bytes": 343,
+      "sha256": "3C2AB168773C248C03F4109C628D6F9F3603A8DE94A85D7B76E42C570E4DE09B"
+    },
+    {
+      "path": "black_wand/header/black_wand_DO_Display.fxh",
+      "kind": "header",
+      "bytes": 2836,
+      "sha256": "5CBD9A53803C4C160FD5401A47B1543DBB6A71731812EAECB3EE8E79D5EE3457"
+    },
+    {
+      "path": "black_wand/header/black_wand_DO_LumaFallback.fxh",
+      "kind": "header",
+      "bytes": 11727,
+      "sha256": "312D31200E97765BA09977050B0E2AA094644D18017FD483802838D7A4CBBDE6"
+    },
+    {
+      "path": "black_wand/header/black_wand_DO_Normal.fxh",
+      "kind": "header",
+      "bytes": 1965,
+      "sha256": "D0D493353ABB13B92FE48B25812BDFE6DFD29F834488368278D82CE8CE6CD12F"
+    },
+    {
+      "path": "black_wand/header/black_wand_DO_OfficialDetail.fxh",
+      "kind": "header",
+      "bytes": 5809,
+      "sha256": "81DA9601E728DA4C4EE071B204CA0681289E5DA2884FA5986187CACE50EC91A2"
+    },
+    {
+      "path": "black_wand/header/black_wand_DO_Oracle.fxh",
+      "kind": "header",
+      "bytes": 2494,
+      "sha256": "FF2ADC25EC31DDAD7E69ED95E5E29BC3D51D02750865E789354CC1C83C5F390E"
+    },
+    {
+      "path": "black_wand/header/black_wand_DO_RMProbe.fxh",
+      "kind": "header",
+      "bytes": 2673,
+      "sha256": "32AF9C7FE6AE280DB21205031E3F8765682645DC6F062774790C9074E19CFFAE"
+    },
+    {
+      "path": "black_wand/header/black_wand_DO_Safe.fxh",
+      "kind": "header",
+      "bytes": 1999,
+      "sha256": "2C40DF883F26C9368E7E739259CB4EFECA1F2716BE320BEDC81B098DCA110739"
+    },
+    {
+      "path": "black_wand/header/black_wand_Gate_Server.fxh",
+      "kind": "header",
+      "bytes": 3392,
+      "sha256": "B667D6BC744AA1C91956139F48AD19B215F6D3EB218D3C2D0632EDFFEF64DF1B"
+    },
+    {
+      "path": "black_wand/header/black_wand_Hatch_Adapter.fxh",
+      "kind": "header",
+      "bytes": 9693,
+      "sha256": "B94614355CE5B131124581C09DDBB83D65DD2F4FC3FCB3D408BB37752FD8CF6F"
+    },
+    {
+      "path": "black_wand/header/black_wand_Helper_All.fxh",
+      "kind": "header",
+      "bytes": 258,
+      "sha256": "37185AEA017C6E1A19232E58F00C01EAE12DA372F7BFD08252284342C7655F2D"
+    },
+    {
+      "path": "black_wand/header/black_wand_Helper_FirstTap.fxh",
+      "kind": "header",
+      "bytes": 1929,
+      "sha256": "2E3036E027C27F90B2425BCB55839A9E40CD4ADF5587CF3B14241B81F88E7451"
+    },
+    {
+      "path": "black_wand/header/black_wand_Helper_OneStepEffect.fxh",
+      "kind": "header",
+      "bytes": 1893,
+      "sha256": "4244B1920532D3C01C63711DE4735AEC85916B5ABBC5F495D29FA1D260105ADC"
+    },
+    {
+      "path": "black_wand/header/black_wand_Helper_Output.fxh",
+      "kind": "header",
+      "bytes": 2202,
+      "sha256": "7F0CB8D324883A1CEFC6DEFBC8B9EB8D403B39ED7DBB2A4A40A45A71291AA47A"
+    },
+    {
+      "path": "black_wand/header/black_wand_Helper_RoleMasks.fxh",
+      "kind": "header",
+      "bytes": 1359,
+      "sha256": "74AA7F6FFC6D57EFE1C944940E255F49F1E1BA48CAD9B8E525C81AB0219B6B36"
+    },
+    {
+      "path": "black_wand/header/black_wand_Lens_Adapter.fxh",
+      "kind": "header",
+      "bytes": 6049,
+      "sha256": "626607CC597C3090411EE4581B1C19C3C44AAAB05E594905618CAB34E7A43F0F"
+    },
+    {
+      "path": "black_wand/header/black_wand_Mask_Adapter.fxh",
+      "kind": "header",
+      "bytes": 14598,
+      "sha256": "923F9F896595807A020D217EE427502D1391B5C7B31219AB3B65AB2CD7E3310B"
+    },
+    {
+      "path": "black_wand/header/black_wand_Pattern_Adapter.fxh",
+      "kind": "header",
+      "bytes": 1386,
+      "sha256": "D1E6129DA97F02E17C9E875D79E1A9F64DCF546D11D4017D830C38783E9B3DC3"
+    },
+    {
+      "path": "black_wand/header/black_wand_Primitive_All.fxh",
+      "kind": "header",
+      "bytes": 517,
+      "sha256": "975D1A2EB886628BBB672E84BEF809B8147C6831D910522C702CFFCA0744E7D9"
+    },
+    {
+      "path": "black_wand/header/black_wand_Primitive_Color.fxh",
+      "kind": "header",
+      "bytes": 1310,
+      "sha256": "4493B546031A4292D96CCE155D17FD7913887CD0279382A0D03B6E29EC591ACF"
+    },
+    {
+      "path": "black_wand/header/black_wand_Primitive_Depth.fxh",
+      "kind": "header",
+      "bytes": 2116,
+      "sha256": "A37542BC5A70E83329C8C2F9702F4E7BAE1A78F9F9EAE64A3C6FB3416C39EBAA"
+    },
+    {
+      "path": "black_wand/header/black_wand_Primitive_Gate.fxh",
+      "kind": "header",
+      "bytes": 842,
+      "sha256": "3E247A841674B04DC0011F30D422CB145ED41DBAA771A3ACC4F3FD636C09233E"
+    },
+    {
+      "path": "black_wand/header/black_wand_Primitive_Hatch.fxh",
+      "kind": "header",
+      "bytes": 1027,
+      "sha256": "3449CF8F73F329586A42B7E570693D82D037BF2EC03CEA88B7297932CBBF2958"
+    },
+    {
+      "path": "black_wand/header/black_wand_Primitive_Lens.fxh",
+      "kind": "header",
+      "bytes": 1921,
+      "sha256": "159ABAA245586859D08D88E9263B4508C60D1EB2C23DF48E5D61E8820A0CB74D"
+    },
+    {
+      "path": "black_wand/header/black_wand_Primitive_Mask.fxh",
+      "kind": "header",
+      "bytes": 1468,
+      "sha256": "BE86F897063AAA07A917B21BBE2DFF5F08DA5421F517955333E5F53317D3BFE6"
+    },
+    {
+      "path": "black_wand/header/black_wand_Primitive_Reduce.fxh",
+      "kind": "header",
+      "bytes": 898,
+      "sha256": "357F7E2F1F318FC7084B9049CCBFC594CA8112D2C04A26A5DF1288D1B39CB095"
+    },
+    {
+      "path": "black_wand/header/black_wand_Primitive_Safe.fxh",
+      "kind": "header",
+      "bytes": 1780,
+      "sha256": "CB1EC59C936B6201ED39D115E672B18CA334499307282FEC5624E0DA1009F418"
+    },
+    {
+      "path": "black_wand/header/black_wand_Primitive_Source.fxh",
+      "kind": "header",
+      "bytes": 703,
+      "sha256": "E4A4CB03637CCDB0724814E263BE89C880C81F24366E38FCBBC1E3D3F45F3A57"
+    },
+    {
+      "path": "black_wand/header/black_wand_Primitive_Weight.fxh",
+      "kind": "header",
+      "bytes": 835,
+      "sha256": "9CC9F087E58D350A64387608DB3C8A850DD35635027BCAF844A70DFD04AD86C7"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_All.fxh",
+      "kind": "header",
+      "bytes": 889,
+      "sha256": "4E0CE8D3172332B6ACA183BA18A8465E9EFE097DD42BC816FC798595AB3F1A89"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_Color.fxh",
+      "kind": "header",
+      "bytes": 2432,
+      "sha256": "C095F6408E09D6ACF124ED18B1773F52D7D3182358D0609A413F91C282AD6713"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_ComplexGlue.fxh",
+      "kind": "header",
+      "bytes": 2097,
+      "sha256": "4E8631DEFF4805333E3DE8E78447FA7DA759739491F529A0C0BF248FE6F2F682"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_ComposeGlue.fxh",
+      "kind": "header",
+      "bytes": 1381,
+      "sha256": "61759F5B0D11622E6472C85A147010AF9E9C3A28E7040FE92A88E6B7B959C090"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_DebugGlue.fxh",
+      "kind": "header",
+      "bytes": 1144,
+      "sha256": "C2E7DC47598359E53DFB43F2D14729187938ED8D6A250C724CC6BEE8C85B4E83"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_DepthGlue.fxh",
+      "kind": "header",
+      "bytes": 1506,
+      "sha256": "721D40DFAE852FA8A3634A15E92B0241421AC8591A3370B513E8F6BB47185CCD"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_GateGlue.fxh",
+      "kind": "header",
+      "bytes": 1157,
+      "sha256": "83F7A8294D304954B1F09ED687A2D4A908E216A52CCC50A72229253983353CC7"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_HatchGlue.fxh",
+      "kind": "header",
+      "bytes": 1631,
+      "sha256": "6C27CB448C851B3E3D7B33A02D22F091E9C7AD26F27FBED5DFD4F5DC4B670EA8"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_LensGlue.fxh",
+      "kind": "header",
+      "bytes": 2503,
+      "sha256": "11614E38F6F282EB1D002CD1B1460ED326C89138E1A8F5A7C677A9CF451B9F71"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_MaskGlue.fxh",
+      "kind": "header",
+      "bytes": 1934,
+      "sha256": "325F79DAC46BBEFC7ADB03ED07AD4B5CBF97AB3BD8CC8CEECC652ED5310CBDC7"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_Noise.fxh",
+      "kind": "header",
+      "bytes": 1455,
+      "sha256": "58BD232E1808CFE69E41C8BF1FE8AC76CCE55A4E90FB00D170A5827593031468"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_OutputGlue.fxh",
+      "kind": "header",
+      "bytes": 1321,
+      "sha256": "A2D4F929CB658182E49BCB31892F67378A697EF8266CB42948A97E142039F727"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_Pattern.fxh",
+      "kind": "header",
+      "bytes": 3065,
+      "sha256": "E408DF0EE17190C300C0C3BD9D698221096406F2CB955B80E5BE488B14B1108D"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_ReduceGlue.fxh",
+      "kind": "header",
+      "bytes": 1531,
+      "sha256": "F71F3C5AF55556ACB5F7567A7D8ABF4D76C6B381EB8B584A8FD959E972D0A587"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_SafeMath.fxh",
+      "kind": "header",
+      "bytes": 2405,
+      "sha256": "90B161CAF55450A7F4F8F22AE6FDE5F2D166A8B4B7EABE419904F813FE927D10"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_Source.fxh",
+      "kind": "header",
+      "bytes": 1404,
+      "sha256": "76C75C2E908CB0E6FB6E5AB7FC113F0D192DD0652E939323AC4EFC5F11DCB96D"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_UV.fxh",
+      "kind": "header",
+      "bytes": 2691,
+      "sha256": "7B94F482CED59901BE5915B8E3A078D9CA421B95B3D4CC222BD86B8BECDDB8A3"
+    },
+    {
+      "path": "black_wand/header/black_wand_Procedural_WeightGlue.fxh",
+      "kind": "header",
+      "bytes": 1142,
+      "sha256": "A11DEEA4A78F0B5C0C3856E5CF26274DC3FA9010CD2B6C128710D06FCC048487"
+    },
+    {
+      "path": "black_wand/header/black_wand_Reduce_Server.fxh",
+      "kind": "header",
+      "bytes": 1636,
+      "sha256": "70DA5C2BC2B5E0A27C34A0A8875CC2719DCEBC775D1F3D9F310049D11C7B0B58"
+    },
+    {
+      "path": "black_wand/header/black_wand_RM_All.fxh",
+      "kind": "header",
+      "bytes": 439,
+      "sha256": "5BAD1F53E4CC64BABD2333B49CCB36662EF15E042836A3BCBF878732C34B5FF6"
+    },
+    {
+      "path": "black_wand/header/black_wand_RM_Debug.fxh",
+      "kind": "header",
+      "bytes": 1409,
+      "sha256": "9735BA1A6B2D6BE79BD355B1C84BE59C5F1B6252D734F84F4C9502505592F9E9"
+    },
+    {
+      "path": "black_wand/header/black_wand_RM_Lighting.fxh",
+      "kind": "header",
+      "bytes": 4980,
+      "sha256": "D655D6A732EE9D3CB0050334EC5B10C4FB30151023BDD68192AB756D2673D79A"
+    },
+    {
+      "path": "black_wand/header/black_wand_RM_March.fxh",
+      "kind": "header",
+      "bytes": 6486,
+      "sha256": "A9183994EA256BF86B72D405F8BA3031287662B15AF354BAD8917FCD1445B351"
+    },
+    {
+      "path": "black_wand/header/black_wand_RM_Normal.fxh",
+      "kind": "header",
+      "bytes": 3780,
+      "sha256": "C214652C4881AA8981BF1A7493C6C0E35E2F3FF0F90AAF3544E3282E23F5ED72"
+    },
+    {
+      "path": "black_wand/header/black_wand_RM_Ops.fxh",
+      "kind": "header",
+      "bytes": 2674,
+      "sha256": "F7C75265BA13D60042E44AB657B829706DE2E352BD9DED0253C5B6698CD5D65F"
+    },
+    {
+      "path": "black_wand/header/black_wand_RM_Ray.fxh",
+      "kind": "header",
+      "bytes": 1660,
+      "sha256": "1B576BAFDF5E576D2A10EB53BB78AAE45BA3E1107D3C542462C6957AC1DA0B15"
+    },
+    {
+      "path": "black_wand/header/black_wand_RM_Safe.fxh",
+      "kind": "header",
+      "bytes": 2365,
+      "sha256": "3B5D01955C06FECAA3EFB5752D93AB47D29339DDACE1CDFF98AAA2C12D9DE21C"
+    },
+    {
+      "path": "black_wand/header/black_wand_RM_Scene.fxh",
+      "kind": "header",
+      "bytes": 9278,
+      "sha256": "AB37B021896422EE8E10888308313F5300C0B47623AED55E34398C2514F329CF"
+    },
+    {
+      "path": "black_wand/header/black_wand_RM_SDF_Basic.fxh",
+      "kind": "header",
+      "bytes": 1948,
+      "sha256": "035A46EE6CA5725E62C0823928CD2ACFA5E0B38048C67870432E83B7275FA17B"
+    },
+    {
+      "path": "black_wand/header/black_wand_RM_Types.fxh",
+      "kind": "header",
+      "bytes": 1745,
+      "sha256": "36F19CAF41AE8BDC089DF32D9AE1E9C107CB8F0D59DED744BCE64C693866429A"
+    },
+    {
+      "path": "black_wand/header/black_wand_Sampler_Server.fxh",
+      "kind": "header",
+      "bytes": 4809,
+      "sha256": "6C4BD1E2C4AB9E99E7DBC14539E766DB1D12D06225C82BE469BF19D13BDE9C66"
+    },
+    {
+      "path": "black_wand/header/black_wand_Weight_Server.fxh",
+      "kind": "header",
+      "bytes": 1671,
+      "sha256": "66547B04D7B0C14BA4ED00E66CC691DA1800EFF5DCB5A394B5D277BFCE5409FD"
+    },
+    {
+      "path": "black_wand/header/BlackWand_Common.fxh",
+      "kind": "header",
+      "bytes": 11431,
+      "sha256": "84F6678140B2F33E72EE7C0BF7D21B666C5C84166DD5045D7145D8684D3714CD"
+    },
+    {
+      "path": "black_wand/header/BlackWand_Extended_Common.fxh",
+      "kind": "header",
+      "bytes": 4604,
+      "sha256": "3F046DE1815575DBD039207574D378B95042F1D8DDFF3033A245E7B270685800"
+    },
+    {
+      "path": "black_wand/header/hexing_eye.fxh",
+      "kind": "header",
+      "bytes": 26785,
+      "sha256": "E0EF127B3EE75B912540D1A3783E1255B02EEC9F8CD7DBD20045FDC2C7724A81"
+    },
+    {
+      "path": "black_wand/header/kaleidoscope.fxh",
+      "kind": "header",
+      "bytes": 17367,
+      "sha256": "310D59A9587E22A9E82FC7B651CFCCAB68414F49767C9F1CF9D6E7F89AB4AEDB"
+    },
+    {
+      "path": "black_wand/header/looking_glass.fxh",
+      "kind": "header",
+      "bytes": 16183,
+      "sha256": "6B152A666828D247F651A480F4F26A083E18620FD76BA4600A05206E3B7A7F97"
+    },
+    {
+      "path": "black_wand/header/MIXSR_API_LoopSafe.fxh",
+      "kind": "header",
+      "bytes": 1434,
+      "sha256": "9667081ABC26667A20C5619B6B201AAD90E73A0DF1842EB761DCFA6531FDDC0D"
+    },
+    {
+      "path": "black_wand/header/miXSR_shared_core.fxh",
+      "kind": "header",
+      "bytes": 2117,
+      "sha256": "BF077C1B2FF187FC157689448919D634A9AFE8C2BD3C74F9C9DFAE782E549205"
+    },
+    {
+      "path": "black_wand/header/miXSR_shared_depth.fxh",
+      "kind": "header",
+      "bytes": 4290,
+      "sha256": "79A0EA19549C202E217AD7F2450DDCF47888D91E0B8ACE14D6738907524A2819"
+    },
+    {
+      "path": "black_wand/header/miXSR_shared_fibonacci.fxh",
+      "kind": "header",
+      "bytes": 2488,
+      "sha256": "F0660EA90C8A4907B058504A33D016AF64814B4D5195E678BEDDD3C97373E789"
+    },
+    {
+      "path": "black_wand/header/miXSR_shared_lens55.fxh",
+      "kind": "header",
+      "bytes": 4534,
+      "sha256": "B6297728820ACE4A4B32C24252BA95DADFB01D5686D92F669E2B96D87A9FEA4D"
+    },
+    {
+      "path": "black_wand/header/miXSR_shared_pattern.fxh",
+      "kind": "header",
+      "bytes": 622,
+      "sha256": "488009283E180772826AEEA88A71FAAAD7EBA18191E0B7F61EDAACA5D1B83F43"
+    },
+    {
+      "path": "book_of_death/effects/BlueSmoke.fx",
+      "kind": "effect",
+      "bytes": 20122,
+      "sha256": "3A1F861E91B0BBEC34E9E6F6FFB49DE66C210A3A16BAF1D13DE3C8A556DD234B"
+    },
+    {
+      "path": "book_of_death/effects/CrookedTongue.fx",
+      "kind": "effect",
+      "bytes": 13405,
+      "sha256": "1996E4BA74AEAA50DDA57285DD403EDC79F453522D7A6547F601B18B1263B6F2"
+    },
+    {
+      "path": "book_of_death/effects/CrystalMass.fx",
+      "kind": "effect",
+      "bytes": 18317,
+      "sha256": "1156A98B00EFF6FD0CDA3C2E2BAB4C6DE1A5AF278034BA01E56093C56DD0BC7B"
+    },
+    {
+      "path": "book_of_death/effects/DeathGaze.fx",
+      "kind": "effect",
+      "bytes": 25872,
+      "sha256": "6BD03BCC04EB7EB1742450C2B176210982F112FBCB67C6258A81387A2F46AD08"
+    },
+    {
+      "path": "book_of_death/effects/FoolsGold.fx",
+      "kind": "effect",
+      "bytes": 26031,
+      "sha256": "7C7DCFBFA24669762117E792CF199F758AC8C96DA0EAF85917FE8EEBF8B55CD2"
+    },
+    {
+      "path": "book_of_death/effects/GoldenHour.fx",
+      "kind": "effect",
+      "bytes": 26289,
+      "sha256": "8D769D24A050D24B4D843595E51EE4150139B38B92195C0D8D754C10530182F0"
+    },
+    {
+      "path": "book_of_death/effects/ObsidianMirror.fx",
+      "kind": "effect",
+      "bytes": 12631,
+      "sha256": "7ACF8B12C4EF8BCD7995F828328A4E1F7FA7B6E1C3D92CF8AC97B850E2A18B3A"
+    },
+    {
+      "path": "book_of_death/effects/PottingClay.fx",
+      "kind": "effect",
+      "bytes": 23358,
+      "sha256": "6CA6BB44CC2645239A59262D7F77E7A576D45AFA9FC50675DA85DE9F99969623"
+    },
+    {
+      "path": "book_of_death/effects/SpiritWorld.fx",
+      "kind": "effect",
+      "bytes": 25442,
+      "sha256": "F730B33D1193FADC9EA12AABD9635AF34A850F71F6E215C844315A0C6F721020"
+    },
+    {
+      "path": "book_of_death/header/BlueSmoke.fxh",
+      "kind": "header",
+      "bytes": 17523,
+      "sha256": "6B1D08EC5CFBA963C726873A610CA154C347DEBCC0B59DB612DBC4C129D2736A"
+    },
+    {
+      "path": "book_of_death/header/CrookedTongue.fxh",
+      "kind": "header",
+      "bytes": 15405,
+      "sha256": "3056FE99D00EF8BB7CB71879E5E13C9A296F41EC23C31CD0547ADCAD017752B9"
+    },
+    {
+      "path": "book_of_death/header/CrystalMass.fxh",
+      "kind": "header",
+      "bytes": 15672,
+      "sha256": "103F1D171B35651FDB3960DD36286ED80708AA3CD67838BE590059C1D515E66A"
+    },
+    {
+      "path": "book_of_death/header/DeathGaze.fxh",
+      "kind": "header",
+      "bytes": 19143,
+      "sha256": "5B988D94032AD648703A410D958168068A35F39D6B65E2EDCEF73B4ADC3DEB92"
+    },
+    {
+      "path": "book_of_death/header/FoolsGold.fxh",
+      "kind": "header",
+      "bytes": 20939,
+      "sha256": "BE77DC1B3867458F2A37D65543363D3BF62025E286827D45DC4B8CDE01650D2C"
+    },
+    {
+      "path": "book_of_death/header/GoldenHour.fxh",
+      "kind": "header",
+      "bytes": 25345,
+      "sha256": "20D0FD085556A5A82BC0CD858A604EA4308923F1243E31A2124042777E798585"
+    },
+    {
+      "path": "book_of_death/header/MIXSR_API_LoopSafe.fxh",
+      "kind": "header",
+      "bytes": 1434,
+      "sha256": "9667081ABC26667A20C5619B6B201AAD90E73A0DF1842EB761DCFA6531FDDC0D"
+    },
+    {
+      "path": "book_of_death/header/ObsidianMirror.fxh",
+      "kind": "header",
+      "bytes": 14238,
+      "sha256": "870733A8380108F91AF8BA398281CA17ADE3F4CB7366F9B3202AFEF48DBCDC13"
+    },
+    {
+      "path": "book_of_death/header/PottingClay.fxh",
+      "kind": "header",
+      "bytes": 22877,
+      "sha256": "DB0CB095694BD22F8B656357CFE9BEE6458B08595D4834B0CE226AB31A97B485"
+    },
+    {
+      "path": "book_of_death/header/shared_core.fxh",
+      "kind": "header",
+      "bytes": 2021,
+      "sha256": "8EEFA29B6398C8AD562CAB0400A97D165E650315610FDA1629A5700859989AE9"
+    },
+    {
+      "path": "book_of_death/header/shared_depth.fxh",
+      "kind": "header",
+      "bytes": 4086,
+      "sha256": "7B84EA9A2D87A4F86EB47466DA11B7714EA43B7540341850BFD3EB8E8708AAD3"
+    },
+    {
+      "path": "book_of_death/header/shared_fibonacci.fxh",
+      "kind": "header",
+      "bytes": 2036,
+      "sha256": "C913D174B447934CCF64F49874488A3075138CA58406BADB6B021923A5C5F807"
+    },
+    {
+      "path": "book_of_death/header/shared_lens55.fxh",
+      "kind": "header",
+      "bytes": 4492,
+      "sha256": "5AB89171D098C1AF1370273C5D4BEF4532BC52D92D9F08D24849798CE0B2109B"
+    },
+    {
+      "path": "book_of_death/header/SpiritWorld.fxh",
+      "kind": "header",
+      "bytes": 21833,
+      "sha256": "36789E2E363B4B26E90AA01AD3EBBC135B01B1FFBD0AC7F3081C9C7FBC149B6D"
+    },
+    {
+      "path": "depth_oracle/effects/black_wand_DepthOracle.fx",
+      "kind": "effect",
+      "bytes": 30767,
+      "sha256": "648F27AE2EB4063F6831897E0D2035D44AB1AF14068121B5535A71A0864A6561"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_Depth_Adapter.fxh",
+      "kind": "header",
+      "bytes": 5502,
+      "sha256": "824525F24170547E562AA47B857C6B8A762F345BA645F28B956D61F0C471E3C0"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_DO_All.fxh",
+      "kind": "header",
+      "bytes": 343,
+      "sha256": "3C2AB168773C248C03F4109C628D6F9F3603A8DE94A85D7B76E42C570E4DE09B"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_DO_Display.fxh",
+      "kind": "header",
+      "bytes": 2836,
+      "sha256": "5CBD9A53803C4C160FD5401A47B1543DBB6A71731812EAECB3EE8E79D5EE3457"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_DO_LumaFallback.fxh",
+      "kind": "header",
+      "bytes": 11727,
+      "sha256": "312D31200E97765BA09977050B0E2AA094644D18017FD483802838D7A4CBBDE6"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_DO_Normal.fxh",
+      "kind": "header",
+      "bytes": 1965,
+      "sha256": "D0D493353ABB13B92FE48B25812BDFE6DFD29F834488368278D82CE8CE6CD12F"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_DO_OfficialDetail.fxh",
+      "kind": "header",
+      "bytes": 5809,
+      "sha256": "81DA9601E728DA4C4EE071B204CA0681289E5DA2884FA5986187CACE50EC91A2"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_DO_Oracle.fxh",
+      "kind": "header",
+      "bytes": 2494,
+      "sha256": "FF2ADC25EC31DDAD7E69ED95E5E29BC3D51D02750865E789354CC1C83C5F390E"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_DO_RMProbe.fxh",
+      "kind": "header",
+      "bytes": 2673,
+      "sha256": "32AF9C7FE6AE280DB21205031E3F8765682645DC6F062774790C9074E19CFFAE"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_DO_Safe.fxh",
+      "kind": "header",
+      "bytes": 1999,
+      "sha256": "2C40DF883F26C9368E7E739259CB4EFECA1F2716BE320BEDC81B098DCA110739"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_RM_All.fxh",
+      "kind": "header",
+      "bytes": 439,
+      "sha256": "5BAD1F53E4CC64BABD2333B49CCB36662EF15E042836A3BCBF878732C34B5FF6"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_RM_Debug.fxh",
+      "kind": "header",
+      "bytes": 1409,
+      "sha256": "9735BA1A6B2D6BE79BD355B1C84BE59C5F1B6252D734F84F4C9502505592F9E9"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_RM_Lighting.fxh",
+      "kind": "header",
+      "bytes": 4980,
+      "sha256": "D655D6A732EE9D3CB0050334EC5B10C4FB30151023BDD68192AB756D2673D79A"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_RM_March.fxh",
+      "kind": "header",
+      "bytes": 6486,
+      "sha256": "A9183994EA256BF86B72D405F8BA3031287662B15AF354BAD8917FCD1445B351"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_RM_Normal.fxh",
+      "kind": "header",
+      "bytes": 3780,
+      "sha256": "C214652C4881AA8981BF1A7493C6C0E35E2F3FF0F90AAF3544E3282E23F5ED72"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_RM_Ops.fxh",
+      "kind": "header",
+      "bytes": 2674,
+      "sha256": "F7C75265BA13D60042E44AB657B829706DE2E352BD9DED0253C5B6698CD5D65F"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_RM_Ray.fxh",
+      "kind": "header",
+      "bytes": 1660,
+      "sha256": "1B576BAFDF5E576D2A10EB53BB78AAE45BA3E1107D3C542462C6957AC1DA0B15"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_RM_Safe.fxh",
+      "kind": "header",
+      "bytes": 2365,
+      "sha256": "3B5D01955C06FECAA3EFB5752D93AB47D29339DDACE1CDFF98AAA2C12D9DE21C"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_RM_Scene.fxh",
+      "kind": "header",
+      "bytes": 9278,
+      "sha256": "AB37B021896422EE8E10888308313F5300C0B47623AED55E34398C2514F329CF"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_RM_SDF_Basic.fxh",
+      "kind": "header",
+      "bytes": 1948,
+      "sha256": "035A46EE6CA5725E62C0823928CD2ACFA5E0B38048C67870432E83B7275FA17B"
+    },
+    {
+      "path": "depth_oracle/header/black_wand_RM_Types.fxh",
+      "kind": "header",
+      "bytes": 1745,
+      "sha256": "36F19CAF41AE8BDC089DF32D9AE1E9C107CB8F0D59DED744BCE64C693866429A"
+    },
+    {
+      "path": "depth_oracle/header/miXSR_shared_core.fxh",
+      "kind": "header",
+      "bytes": 2117,
+      "sha256": "BF077C1B2FF187FC157689448919D634A9AFE8C2BD3C74F9C9DFAE782E549205"
+    },
+    {
+      "path": "depth_oracle/header/miXSR_shared_depth.fxh",
+      "kind": "header",
+      "bytes": 4290,
+      "sha256": "79A0EA19549C202E217AD7F2450DDCF47888D91E0B8ACE14D6738907524A2819"
+    },
+    {
+      "path": "golden_weave/effects/GoldenWeave_RMGI_Primitive.fx",
+      "kind": "effect",
+      "bytes": 19226,
+      "sha256": "A356D64CB35652BE5B378D4A1AD37FFE5097D9A527EBDF6004B6CC42E884C71E"
+    },
+    {
+      "path": "golden_weave/effects/GoldenWeave_RMGI_Redux.fx",
+      "kind": "effect",
+      "bytes": 36840,
+      "sha256": "48CF3486D96895D12D7A097ECAD0D96D03598543A453459A287893610E02E4D1"
+    },
+    {
+      "path": "golden_weave/header/GoldenWeave_Primitives.fxh",
+      "kind": "header",
+      "bytes": 18173,
+      "sha256": "2B548BD42B950C5337F8C1275FF3B62E47B5151B8A97636ED83364BF6665E6BA"
+    },
+    {
+      "path": "legacy_lenses/effects/hexing_eye.fx",
+      "kind": "effect",
+      "bytes": 30706,
+      "sha256": "FCCEB28D55DB7123CBD9179114DC8B79C34F7555D7707BD100C2DE108C33818D"
+    },
+    {
+      "path": "legacy_lenses/effects/kaleidoscope.fx",
+      "kind": "effect",
+      "bytes": 32865,
+      "sha256": "66CED6B48168D8E11C97EE2647EC7071E6EF19B20A7CF6E40B6A39425D4AEB4B"
+    },
+    {
+      "path": "legacy_lenses/effects/looking_glass.fx",
+      "kind": "effect",
+      "bytes": 26232,
+      "sha256": "4509E3D17B3436344B0F16850B9E1EF26EFD1C5A3E27F180BEB78AECF6079F7C"
+    },
+    {
+      "path": "legacy_lenses/header/hexing_eye.fxh",
+      "kind": "header",
+      "bytes": 26736,
+      "sha256": "6E487F52A718ADA453869F4E0D3FDE48F8BEA7931F6418606A71DF9057325682"
+    },
+    {
+      "path": "legacy_lenses/header/kaleidoscope.fxh",
+      "kind": "header",
+      "bytes": 17367,
+      "sha256": "310D59A9587E22A9E82FC7B651CFCCAB68414F49767C9F1CF9D6E7F89AB4AEDB"
+    },
+    {
+      "path": "legacy_lenses/header/looking_glass.fxh",
+      "kind": "header",
+      "bytes": 15862,
+      "sha256": "776003ABC49277070AA8B2923B0B4A703D1773EBF2FE29887CA541826304567E"
+    },
+    {
+      "path": "legacy_lenses/header/MIXSR_API_LoopSafe.fxh",
+      "kind": "header",
+      "bytes": 1434,
+      "sha256": "9667081ABC26667A20C5619B6B201AAD90E73A0DF1842EB761DCFA6531FDDC0D"
+    },
+    {
+      "path": "legacy_lenses/header/miXSR_shared_core.fxh",
+      "kind": "header",
+      "bytes": 2117,
+      "sha256": "BF077C1B2FF187FC157689448919D634A9AFE8C2BD3C74F9C9DFAE782E549205"
+    },
+    {
+      "path": "legacy_lenses/header/miXSR_shared_depth.fxh",
+      "kind": "header",
+      "bytes": 4290,
+      "sha256": "79A0EA19549C202E217AD7F2450DDCF47888D91E0B8ACE14D6738907524A2819"
+    },
+    {
+      "path": "legacy_lenses/header/miXSR_shared_fibonacci.fxh",
+      "kind": "header",
+      "bytes": 2518,
+      "sha256": "9275EC57624D64A7FBB758AB866DDA2BB340B38F2251D647C8CD9CED568E23E3"
+    },
+    {
+      "path": "legacy_lenses/header/miXSR_shared_lens55.fxh",
+      "kind": "header",
+      "bytes": 4534,
+      "sha256": "B6297728820ACE4A4B32C24252BA95DADFB01D5686D92F669E2B96D87A9FEA4D"
+    },
+    {
+      "path": "legacy_lenses/header/miXSR_shared_pattern.fxh",
+      "kind": "header",
+      "bytes": 622,
+      "sha256": "488009283E180772826AEEA88A71FAAAD7EBA18191E0B7F61EDAACA5D1B83F43"
+    }
+  ],
+  "validation_boundary": "Static documentation checks cover source presence, hashes, declaration extraction, local include resolution, generated-document currency, and README linkage. They do not attest ReShade compilation, backend compatibility, target-game depth behavior, performance, preset quality, or live visual acceptance."
+}

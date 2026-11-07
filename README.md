@@ -24,6 +24,7 @@ visual checks in the ReShade environment where it will be used.
 - [Complete effect catalog](#complete-effect-catalog)
 - [ReShade and DisplayDepth credit](#reshade-and-displaydepth-credit)
 - [Requirements and installation](#requirements)
+- [API documentation](#api-documentation)
 - [Recommended first run](#recommended-first-run)
 - [Repository layout](#repository-layout)
 - [Validation and contribution](#validation-and-contribution)
@@ -319,6 +320,19 @@ To install only selected families, copy the complete directory for each chosen
 family. Do not copy an `effects/` directory without its matching `header/`
 directory.
 
+## API documentation
+
+The versioned [Occult Box API 0.1.0 documentation](API/0.1.0/README.md)
+indexes the current ReShade-facing techniques and controls, the complete
+family-local include surface, declaration locations, include relationships,
+and source hashes. Its current status is a documentation draft, not a promise
+that every visible helper is a stable consumer contract.
+
+Use the [effect interface reference](API/0.1.0/EFFECTS.md) for preset-facing
+technique and uniform names, and the [include surface](API/0.1.0/INCLUDES.md)
+for shader-author integration boundaries. Static API validation does not
+replace clean ReShade compilation or live visual acceptance.
+
 ## Recommended first run
 
 1. Enable `black_wand_DepthOracle` from `depth_oracle`.
@@ -355,7 +369,9 @@ Occult Box/
   legacy_lenses/
     effects/
     header/
+  API/0.1.0/       Versioned effect/include documentation and source manifest
   docs/images/      README comparison captures
+  tools/            Documentation generation and presentation tooling
 ```
 
 ## Validation and contribution
