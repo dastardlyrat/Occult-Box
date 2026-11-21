@@ -400,3 +400,11 @@ headers refer to `LICENSE-SOURCE-AVAILABLE-RESHADE-ONLY.txt`; that filename is
 not bundled in this tree, and there is no standalone project-wide license file
 here. This README records the supplied state without inventing replacement
 terms or a new rights holder.
+
+## Project directory and related work
+
+[Browse the dastardlyrat project directory](https://dastardlyrat.github.io/).
+
+- [miXSR_hexer](https://github.com/dastardlyrat/miXSR_hexer)
+- [OpenSurface](https://github.com/dastardlyrat/OpenSurface)
+- [reshade-preset-catalog](https://github.com/dastardlyrat/reshade-preset-catalog)
